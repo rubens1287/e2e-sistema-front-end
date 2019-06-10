@@ -73,7 +73,7 @@
 						<configuration>
 							<systemPropertyVariables>
 								<url></url>
-								<browser>firefox</browser>
+								<browser>Chrome</browser>
 							</systemPropertyVariables>
 							<!-- UNCOMMENT - To add any exclusions if required -->
 							<!-- <excludes> <exclude>**/*IT*.java</exclude> </excludes> -->
