@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Tests') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        dir('src/test/resources') {
+                            sh 'chmod +x chromedriver'
+                            sh 'chmod +x geckodriver'
+                        }
+                        withEnv(['DISPLAY=:1']) {
+                            sh 'Xvfb :1 -screen 0 1366x768x16 &'
+                            //-Dhttp.proxyHost=http://10.21.7.9 -Dhttp.proxyPort=83
+                            sh 'mvn verify'
+                        }
+                    } else {
+                        bat 'mvn verify'
+                    }
+                    archiveArtifacts artifacts: '**', onlyIfSuccessful: false
+                }
+            }
+        }
+    }
+}
