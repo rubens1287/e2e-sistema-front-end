@@ -5,7 +5,12 @@ import br.com.core.report.ExtentReports;
 import br.com.core.setup.DriverManager;
 import br.com.core.view.Action;
 import br.com.pom.Constantes;
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
+import java.util.regex.Pattern;
+
+import java.text.Normalizer;
+import java.util.Locale;
 
 public class Usuario extends DriverManager implements Constantes {
 
@@ -29,8 +34,12 @@ public class Usuario extends DriverManager implements Constantes {
     }
 
     public void preencherCadastro(String nome, String email, String senha){
+
+
+        Faker faker = new Faker(new Locale("pt-BR"));
+
         getBrowser().findElement(txtNome).sendKeys(nome);
-        getBrowser().findElement(txtEmail).sendKeys(email);
+        getBrowser().findElement(txtEmail).sendKeys(unaccent(faker.name().username())+"@gft.com");
         getBrowser().findElement(txtSenha).sendKeys(senha);
         ExtentReports.appendToReport(getBrowser());
         getBrowser().findElement(btnCadastra).click();
@@ -38,8 +47,14 @@ public class Usuario extends DriverManager implements Constantes {
 
     public void validaMensagem(String msg){
         Verifications.verifyTextsExistingElement(getBrowser(),lblMensagem,msg,timeOut);
+        ExtentReports.appendToReport(getBrowser());
 
     }
 
+    public static String unaccent(String src) {
+        return Normalizer
+                .normalize(src, Normalizer.Form.NFD)
+                .replaceAll("[^\\p{ASCII}]", "");
+    }
 
 }
