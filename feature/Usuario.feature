@@ -1,5 +1,5 @@
 # language:pt
-# encoding:UFT-8
+# encoding:UTF-8
 
 Funcionalidade: Usuario
   Eu como usuario gostaria de criar meu proprio login para aplicacao
