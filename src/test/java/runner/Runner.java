@@ -9,7 +9,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				 tags = {},
 				 plugin = {"json:target/json-cucumber-reports/cukejson.json",
 						   "testng:target/testng-cucumber-reports/cuketestng.xml",
-						   //"com.epam.reportportal.cucumber.ScenarioReporter",
+						   "com.epam.reportportal.cucumber.ScenarioReporter",
 						 },
 				features = "feature")
 public class Runner extends AbstractTestNGCucumberParallelTests {}
