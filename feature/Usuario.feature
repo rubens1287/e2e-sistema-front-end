@@ -11,7 +11,7 @@ Funcionalidade: Usuario
       | Rubens Lobo | rubens.lobo@gft.com | 1234  |
     Entao sera apresentado a mensagem "Usuário inserido com sucesso"
 
-  @dev
+
    Cenario: CT002 - Executa login invalido
      Dado Eu estou na aplicação "https://www.pernambucanas.com.br/customer/account/login/referer/aHR0cHM6Ly93d3cucGVybmFtYnVjYW5hcy5jb20uYnIv/"
      Quando Eu preencher o email "rubens.lobo@gft.com" e senha "123456789" e clicar no botao entrar
