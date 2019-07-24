@@ -26,7 +26,8 @@ public class LoginDoCliente extends DriverManager implements Constantes {
 
     public void validaMensagemError(String msg){
 
-        Verifications.verifyElementExists(getBrowser(),lblMsg,timeOut);
+        //Verifications.verifyElementExists(getBrowser(),lblMsg,timeOut);
+        Verifications.wait(1);
         ExtentReports.appendToReport(getBrowser());
         //new WebDriverWait(getBrowser(),timeOut).until(ExpectedConditions.textToBePresentInElementValue(lblMsg,msg));
 
