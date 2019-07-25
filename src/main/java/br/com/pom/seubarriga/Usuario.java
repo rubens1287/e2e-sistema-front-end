@@ -26,7 +26,6 @@ public class Usuario extends DriverManager implements Constantes {
         getBrowser().get(url);
     }
 
-
     public void novoCadastro (){
         Action.clickOnElement(getBrowser(),btnNovoUsuario,timeOut);
         Verifications.verifyElementIsClickable(getBrowser(),txtNome,timeOut);
