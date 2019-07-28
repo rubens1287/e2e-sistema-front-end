@@ -37,7 +37,7 @@ pipeline {
     }
     post {
         always {
-            step([$class: 'Publisher', reportFilenamePattern: 'target/testng-cucumber-reports/*.xml']) 
+            step([$class: 'Publisher', reportFilenamePattern: 'target/testng-cucumber-reports/*.xml'])
         }
     }
 }
