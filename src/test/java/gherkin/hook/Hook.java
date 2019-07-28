@@ -15,7 +15,7 @@ public class Hook extends ExtentReports {
     public void init(Scenario scenario) {
         testScenario.set(scenario);
 
-        AppWeb web = new AppWeb();
+        AppWeb web = new AppWeb(); 
         web.setTestName(testScenario.get().getName());
         web.setBrowserName("chrome");
         web.setUpDriver(web);
