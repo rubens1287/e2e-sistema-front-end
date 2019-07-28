@@ -2,7 +2,7 @@
 # encoding:UTF-8
 
 Funcionalidade: Usuario
-  Eu como usuario gostaria de criar meu proprio login para aplicacao
+  Eu como usuario gostaria de criar meu proprio login para aplicacao 
 
   Cenario: CT001 - Criar novo usuario
     Dado Eu estou na aplicação "http://seubarriga.wcaquino.me"
